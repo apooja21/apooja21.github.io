@@ -219,6 +219,7 @@ a {
 .outer{
 	border-left: 2px solid var(--title-color);
 	margin-left: 30px;
+	padding-left: 30px;;
 }
 .card{
   position: relative;
@@ -237,7 +238,7 @@ a {
   height: 15px;
   background: white;
   border-radius: 999px;
-  left: -32px;
+  left: -62px;
   border: 3px solid #b8c0ff;
   background-color: #b8c0ff;
 }
