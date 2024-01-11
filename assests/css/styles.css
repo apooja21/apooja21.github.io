@@ -47,8 +47,8 @@ a {
 
 .container {
 	height: 100%;
-	margin-left: 3.5rem;
-	margin-right: 3.5rem;
+	max-width: 1920px;
+	margin: 0 auto;
 }
 .full_page {
 	height: 100%;
@@ -66,15 +66,16 @@ a {
 
 .header {
 	width: 100%;
-	/* position: fixed; */
-	/* top: 0; */
+	display: inline-block;
+	position: fixed;
+	top: 0;
+	z-index: 100;
 	background-color: var(--body-color);
 }
 .nav {
 	display: flex;
 	justify-content: space-between;
-	padding: 15px 60px;
-	margin: 0 4.5rem;
+	padding: 15px 2.5rem;
 	align-items: center;
 }
 
@@ -82,7 +83,7 @@ a {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	gap: 3rem;
+	gap: 4rem;
 	color: var(--title-color);
 	font-size: 18px;
 	font-family: var(--title-font);
@@ -101,14 +102,13 @@ a {
 }
 
 .name {
-	/* 	margin-top: rem; */
 	padding: 0 2.5rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: flex-end;
 	flex-wrap: wrap;
-	margin-top: -110px;
+	margin-top: 100px;
 }
 .my_name {
 	flex-basis: 50%;
@@ -130,6 +130,7 @@ a {
 }
 .intro {
 	flex-basis: 50%;
+	align-items: center;
 }
 .intro p {
 	font-family: var(--title-font);
@@ -145,56 +146,24 @@ a {
 }
 
 /* -----------------------------ABOUT SECTION----------------------------- */
-.about {
+.about_desc {
 	display: flex;
 	flex-wrap: wrap;
 	height: fit-content;
-	padding: 2.5rem;
-	gap: 3.5rem;
-	justify-content: center;
+	padding: 0 2.5rem;
+	gap: 4rem;
 	font-family: var(--text-font);
-	/* margin: 0 2.5rem; */
 	font-weight: 400;
 	align-items: center;
 }
 
 .about h1 {
-	text-align: center;
 	font-family: var(--title-font);
 	color: var(--title-color);
 }
 
-/* .img_outer {
-	width: 350px;
-	height: 490px;
-	padding: 1px;
-	display: inline-block;
-	border: 3px solid #788bff;
-	font-size: 2.5rem;
-	border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-	text-transform: uppercase;
-	letter-spacing: 0.3ch;
-	background: #ffffff;
-	position: relative;
-	z-index: 2;
-
-	&::before {
-		content: '';
-		border: 2px solid #788bff;
-		display: block;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
-		border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
-		z-index: 3;
-	}
-} */
-
 .about_img img {
-	width: 340px;
+	width: 450px;
 	height: 450px;
 	z-index: 1;
 }
@@ -206,21 +175,18 @@ a {
 
 .about_text {
 	padding: 1.5rem;
-	flex-basis: 62%;
+	flex-basis: 72%;
 }
 
 .aboutme {
 	font-size: 18px;
 	margin-bottom: 30px;
-	line-height: 27px;
+	line-height: 36px;
 }
+
 .underline-gradient {
 	font-weight: 500;
-	background-image: linear-gradient(
-		120deg,
-		hsla(232, 100%, 74%, 1) 0%,
-		hsla(229, 78%, 63%, 1) 100%
-	);
+	background-image: linear-gradient(120deg, #abc4ff 0%, #ff8fab 100%);
 	background-repeat: no-repeat;
 	background-size: 100% 0.2em;
 	background-position: 0 88%;
@@ -235,11 +201,10 @@ a {
 	border: 2px solid #788bff;
 	border-radius: 50px;
 	color: var(--sub-text-color);
-	background-color: #bfd7ff;
 }
 
 .skill_sets {
-	flex-basis: 47%;
+	flex-basis: 48%;
 	padding: 1.5rem;
 }
 
@@ -251,7 +216,7 @@ a {
 
 .skill_list {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-direction: row;
 	padding: 0;
 	flex-wrap: wrap;
@@ -260,11 +225,14 @@ a {
 }
 
 .experience {
-	flex-basis: 47%;
+	flex-basis: 48%;
 	padding: 1.5rem;
 }
+.experience h1 {
+	margin-left: 25px;
+}
 .outer {
-	border-left: 2px solid var(--title-color);
+	border-left: 2px dashed var(--title-color);
 	margin-left: 1.875rem;
 	padding-left: 1.875rem;
 }
@@ -272,7 +240,6 @@ a {
 	position: relative;
 	margin: 0 0 1.25rem 1.25rem;
 	padding: 8px 24px;
-	background: #bfd7ff;
 	border-radius: 20px;
 	max-width: 400px;
 	border: 2px solid #788bff;
@@ -285,9 +252,8 @@ a {
 	height: 15px;
 	background: white;
 	border-radius: 999px;
-	left: -62px;
+	left: -63px;
 	border: 3px solid #788bff;
-	background-color: #bfd7ff;
 }
 
 /* -----------------------CONTACT PAGE CSS-------------------------- */
