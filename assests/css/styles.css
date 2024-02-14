@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
 @font-face {
 	font-family: 'subjectivityextra_bold';
 	src: url('./fonts/subjectivity-extrabold-webfont.woff2') format('woff2'),
@@ -6,6 +7,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 @font-face {
 	font-family: 'subjectivityregular';
 	src: url('./fonts/subjectivity-regular-webfont.woff2') format('woff2'),
@@ -13,6 +15,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 :root {
 	--body-color: #ffffff;
 	--title-color: #0b132b;
@@ -30,6 +33,7 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
 * {
 	box-sizing: border-box;
 }
@@ -41,6 +45,7 @@ body {
 ul {
 	list-style: none;
 }
+
 a {
 	text-decoration: none;
 }
@@ -50,11 +55,13 @@ a {
 	max-width: 1920px;
 	margin: 0 auto;
 }
+
 .full_page {
 	height: 100%;
 	display: inline-block;
 	width: 100%;
 }
+
 /* .main {
 	height: 100%;
 	overflow-x: scroll;
@@ -77,6 +84,7 @@ section {
 
 	z-index: 100;
 }
+
 .nav {
 	display: flex;
 	justify-content: space-between;
@@ -115,33 +123,40 @@ section {
 	flex-wrap: wrap;
 	margin-top: 0px;
 }
+
 .my_name {
 	flex-basis: 50%;
 }
+
 .my_name h1 {
 	font-family: var(--name-font);
 	font-size: 7vw;
 	color: var(--title-color);
 	margin: 0;
 }
+
 .title {
 	flex-basis: 100%;
 }
+
 .title p {
 	font-family: var(--title-font);
 	padding: 2.5rem 0;
 	font-size: 26px;
 	color: var(--sub-text-color);
 }
+
 .intro {
 	flex-basis: 50%;
 	align-items: center;
 }
+
 .intro p {
 	font-family: var(--title-font);
 	font-size: 1.75rem;
 	color: var(--sub-text-color);
 }
+
 .welcome {
 	font-family: var(--title-font);
 	font-size: 1.75rem;
@@ -191,11 +206,14 @@ section {
 
 .underline-gradient {
 	font-weight: 500;
-	background-image: linear-gradient(120deg, #abc4ff 0%, #ff8fab 100%);
+	background-image: linear-gradient(135deg,
+			hsla(169, 76%, 48%, 1) 0%,
+			hsla(67, 87%, 82%, 1) 100%);
 	background-repeat: no-repeat;
 	background-size: 100% 0.2em;
 	background-position: 0 88%;
 	transition: background-size 0.25s ease-in;
+
 	&:hover {
 		background-size: 100% 88%;
 	}
@@ -203,12 +221,13 @@ section {
 
 .resume_link {
 	padding: 10px 20px;
-	border: 2px solid #788bff;
+	border: 2px solid #3f37c9;
 	border-radius: 50px;
 	color: var(--sub-text-color);
 }
 
-.skill_sets {
+.skill_sets,
+.experience {
 	flex-basis: 48%;
 	padding: 1.5rem;
 }
@@ -216,7 +235,7 @@ section {
 .skill_sets h1,
 .experience h1 {
 	font-size: 1.5rem;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 .skill_list {
@@ -227,27 +246,37 @@ section {
 	flex-wrap: wrap;
 	gap: 2.5rem;
 	margin-top: 20px;
+	font-weight: 500;
 }
 
-.experience {
-	flex-basis: 48%;
-	padding: 1.5rem;
+.skill_list li {
+	margin-top: 10px;
+	text-align: center;
 }
+
+.skill_img img {
+	width: 80px;
+	height: 80px;
+
+}
+
 .experience h1 {
 	margin-left: 25px;
 }
+
 .outer {
 	border-left: 2px dashed var(--title-color);
 	margin-left: 1.875rem;
 	padding-left: 1.875rem;
 }
+
 .card {
 	position: relative;
 	margin: 0 0 1.25rem 1.25rem;
 	padding: 8px 24px;
 	border-radius: 20px;
 	max-width: 400px;
-	border: 2px solid #788bff;
+	border: 2px solid #3e37c9;
 }
 
 .title::before {
@@ -258,7 +287,7 @@ section {
 	background: white;
 	border-radius: 999px;
 	left: -63px;
-	border: 3px solid #788bff;
+	border: 3px solid #3f37c9;
 }
 
 /* -----------------------CONTACT PAGE CSS-------------------------- */
@@ -276,6 +305,7 @@ section {
 	font-size: 100px;
 	text-align: center;
 }
+
 .headline {
 	font-family: var(--title-font);
 	font-size: 2.8125rem;
@@ -288,10 +318,12 @@ section {
 	text-align: center;
 	font-size: 14px;
 }
+
 .link {
 	color: var(--title-color);
 	border-bottom: 1px solid var(--title-color);
 }
+
 .link:visited {
 	color: var(--title-color);
 }
@@ -304,73 +336,18 @@ section {
 	width: 100%;
 	height: 100vh;
 	z-index: -1;
-
-	div {
-		position: absolute;
-		opacity: 0.6;
-		filter: blur(65px);
-
-		&:nth-of-type(1) {
-			width: 1000px;
-			height: 1000px;
-			border-radius: 50%;
-			background: radial-gradient(
-				circle,
-				rgba(63, 94, 251, 1) 0%,
-				rgba(195, 203, 249, 1) 39%,
-				rgba(244, 245, 255, 1) 63%,
-				rgba(255, 255, 255, 1) 100%
-			);
-			top: -15%;
-			left: -11%;
-		}
-
-		&:nth-of-type(2) {
-			width: 1000px;
-			height: 1000px;
-			border-radius: 50%;
-			background: radial-gradient(
-				circle,
-				rgba(63, 94, 251, 1) 0%,
-				rgba(195, 203, 249, 1) 39%,
-				rgba(244, 245, 255, 1) 63%,
-				rgba(255, 255, 255, 1) 100%
-			);
-			top: 6%;
-			left: 56%;
-		}
-
-		&:nth-of-type(3) {
-			width: 993px;
-			height: 985px;
-			border-radius: 50%;
-			background: radial-gradient(
-				circle,
-				hsla(254, 74%, 65%, 0.9) 0%,
-				hsla(276, 91%, 79%, 0.9) 39%,
-				hsla(276, 60%, 86%, 0.5) 63%,
-				rgba(255, 255, 255, 1) 100%
-			);
-			top: 25%;
-			left: 21%;
-		}
-
-		/* &:nth-of-type(4) {
-			width: 993px;
-			height: 985px;
-			border-radius: 50%;
-			background: radial-gradient(
-				circle,
-				hsla(254, 74%, 65%, 0.9) 0%,
-				hsla(276, 91%, 79%, 0.9) 39%,
-				hsla(276, 60%, 86%, 0.5) 63%,
-				rgba(255, 255, 255, 1) 100%
-			);
-			top: 25%;
-			left: 21%;
-		} */
-	}
+	background-color: hsla(0, 0%, 100%, 1);
+	background-image:
+		radial-gradient(at 74% 32%, hsla(268, 100%, 91%, 1) 0px, transparent 50%),
+		radial-gradient(at 12% 73%, hsla(230, 100%, 88%, 1) 0px, transparent 50%),
+		radial-gradient(at 74% 76%, hsla(214, 100%, 93%, 1) 0px, transparent 50%),
+		radial-gradient(at 0% 0%, hsla(215, 100%, 97%, 1) 0px, transparent 50%);
+	filter: blur(5px);
 }
+
+
+/* -----------------------Responsive CSS-------------------------- */
+
 
 @media screen and (min-width: 992px) and (max-width: 1920px) {
 	.container {
@@ -395,9 +372,11 @@ section {
 		font-size: 16px;
 		line-height: 27px;
 	}
+
 	.skill_sets {
 		flex-basis: 45%;
 	}
+
 	.experience {
 		flex-basis: 45%;
 	}
