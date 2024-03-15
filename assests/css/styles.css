@@ -108,8 +108,18 @@ h4 {
 }
 
 .nav_list a {
-	/* text-decoration: none; */
 	color: var(--title-color);
+}
+
+.nav_link {
+	display: inline-block;
+	padding: 10px;
+	border: 2px solid transparent;
+	transition: all .3s ease-in;
+}
+
+.nav_link:hover {
+	border: 2px solid var(--title-color);
 }
 
 
