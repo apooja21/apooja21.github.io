@@ -204,10 +204,7 @@ h4 {
 	height: 100%;
 	object-fit: fill;
 	border: solid 3px var(--border-color);
-	border-top-left-radius: 40px 140px;
-	border-top-right-radius: 23px 130px;
-	border-bottom-left-radius: 110px 19px;
-	border-bottom-right-radius: 120px 24px;
+	border-radius: 50%;
 }
 
 .about_title {
