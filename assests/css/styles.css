@@ -227,14 +227,14 @@ h4 {
 	font-weight: 500;
 	background: linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
 	background-repeat: no-repeat;
-	background-size: 100% 0.2em;
-	background-position: 0 88%;
+	background-size: 100% 1em;
+	background-position: 100% 88%;
 	transition: background-size 0.25s ease-in;
-
-	&:hover {
+	color: #ffffff;
+	/* &:hover {
 		background-size: 100% 88%;
 		color: #ffffff;
-	}
+	} */
 }
 
 .resume_link {
@@ -377,6 +377,7 @@ h4 {
 
 .project_about {
 	margin-bottom: 30px;
+	line-height: 28px;
 }
 
 .project_link {
@@ -428,9 +429,25 @@ h4 {
 }
 
 .link:hover {
-	font-weight: 500;
 	color: #ffffff;
 }
+
+.underline-gradient-link {
+	font-weight: 500;
+	background: linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
+	background-repeat: no-repeat;
+	background-size: 100% .25em;
+	background-position: 0 88%;
+	transition: background-size 0.25s ease-in;
+	color: #ffffff;
+
+	&:hover {
+		background-size: 100% 88%;
+		color: #ffffff;
+	}
+}
+
+
 
 /* -----------------------Background Gradient Effect CSS-------------------------- */
 .gradient-container {
