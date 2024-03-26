@@ -172,7 +172,7 @@ h4 {
 .title p {
 	font-family: var(--title-font);
 	padding: 2.5rem 0;
-	font-size: 26px;
+	font-size: 1.6rem;
 	color: var(--sub-text-color);
 }
 
@@ -426,6 +426,7 @@ h4 {
 	align-items: center;
 	justify-content: center;
 	color: var(--title-color);
+	padding: 0 10px;
 }
 
 .hello {
@@ -529,31 +530,6 @@ h4 {
 		flex-wrap: wrap;
 
 	}
-
-	/* 	.project {
-		margin-left: 15px;
-		margin-right: 15px;
-	}
-
-	.project_cards {
-		flex-direction: column;
-	}
-
-	.cards {
-		flex-direction: column;
-		text-align: center;
-		margin: 0 40px;
-		padding-left: 50px;
-		padding-right: 50px;
-		width: 100%;
-
-	}
-
-	.project_img {
-		margin: -100px 0 30px 0;
-		width: 100%;
-		max-width: 1000px;
-	} */
 }
 
 @media (width <=989px) {
@@ -585,8 +561,14 @@ h4 {
 	}
 }
 
-/* ----------Extra Small Devices (Phones, 600px and down)---------- */
-@media only screen and (max-width: 769px) {
+/* ----------For Small Devices (Phones, 769px and down)---------- */
+
+@media screen and (max-width: 769px) {
+	.container {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+
 	.nav {
 		height: var(--header-height);
 		padding: 15px;
@@ -653,18 +635,6 @@ h4 {
 		width: 60px;
 		height: 30px;
 	}
-}
-
-@media screen and (max-width: 769px) {
-	.container {
-		margin-left: 1rem;
-		margin-right: 1rem;
-	}
-
-	.full_page {
-		height: auto;
-		/* display: grid; */
-	}
 
 	.home {
 		display: flex;
@@ -676,7 +646,6 @@ h4 {
 		grid-template-rows: repeat(auto-fit, 1fr);
 		grid-row-gap: px;
 		padding: 0 1.5rem;
-		margin-top: 9rem;
 		align-items: start;
 	}
 
@@ -685,7 +654,7 @@ h4 {
 	}
 
 	.my_name h1 {
-		font-size: 8vh;
+		font-size: 8vw;
 	}
 
 	.title {
@@ -693,8 +662,9 @@ h4 {
 
 	}
 
-	.intro p {
-		font-size: 1.5rem;
+	.intro p,
+	.welcome {
+		font-size: 4vw;
 	}
 
 	.intro {
@@ -702,14 +672,13 @@ h4 {
 	}
 
 	.welcome {
-		font-size: 1.35rem;
-		font-weight: bold;
-		margin-top: px;
+		font-size: 4vw;
+		margin-top: 1px;
 	}
 
 	.title p {
 		padding: 10px 0;
-		font-size: 3vh;
+		font-size: 3vw;
 	}
 
 	.about_section {
@@ -745,7 +714,7 @@ h4 {
 	}
 
 	.resume_link {
-		padding: 6px 24px;
+		padding: 6px 15px;
 		font-size: 14px;
 		text-align: center;
 	}
@@ -803,10 +772,6 @@ h4 {
 		display: none;
 	}
 
-	.contact {
-		margin-top: 60px;
-		margin-bottom: 120px;
-	}
 
 	.hello {
 		font-size: 60px;
@@ -836,7 +801,7 @@ h4 {
 
 	.project_link {
 		font-size: 14px;
-		padding: 9px 19px;
+		padding: 9px 9px;
 	}
 }
 
@@ -845,4 +810,61 @@ h4 {
 		margin-left: 2.5rem;
 		margin-right: 2.5rem;
 	}
+}
+
+@media screen and (min-width: 770px) and (max-width: 992px) {
+
+	.container {
+		margin: 0 auto;
+	}
+
+	.my_name {
+		flex-basis: 60%;
+	}
+
+	.my_name h1 {
+		font-size: 9vw;
+	}
+
+	.intro {
+		flex-basis: 40%;
+	}
+
+	.intro p,
+	.welcome {
+		font-size: 1.25rem;
+	}
+
+	.title p {
+		font-size: 1.35rem;
+	}
+
+	.about_desc {
+		justify-content: center;
+	}
+
+	.about_title {
+		text-align: center;
+	}
+
+	.about_text {
+		flex-basis: 100%;
+		text-align: justify;
+	}
+
+	.skill_sets,
+	.experience {
+		flex-basis: 100%;
+	}
+
+	.skill_sets h1,
+	.experience h1 {
+		font-size: 1.25rem;
+		text-align: center;
+	}
+
+	.contact_details {
+		padding: 0 30px;
+	}
+
 }
