@@ -496,8 +496,7 @@ h4 {
 
 @media screen and (min-width: 992px) and (max-width: 1920px) {
 	.container {
-		margin-left: .5rem;
-		margin-right: .5rem;
+		margin: 0 auto;
 	}
 
 	.about_img img {
@@ -812,7 +811,7 @@ h4 {
 	}
 }
 
-@media screen and (min-width: 770px) and (max-width: 992px) {
+@media screen and (min-width: 770px) and (max-width: 1025px) {
 
 	.container {
 		margin: 0 auto;
