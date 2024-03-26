@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @font-face {
 	font-family: 'subjectivityextra_bold';
@@ -23,7 +23,9 @@
 	--border-color: rgb(63, 55, 201);
 	--name-font: 'subjectivityextra_bold', sans-serif;
 	--title-font: 'subjectivityregular', sans-serif;
-	--text-font: 'Montserrat Alternates', sans-serif;
+	--text-font: 'Poppins', sans-serif;
+
+	--header-height: 3.5rem;
 }
 
 /* --------------------BASE CSS------------------------- */
@@ -85,7 +87,6 @@ h4 {
 	position: fixed;
 	top: 0;
 	backdrop-filter: blur(30px);
-
 	z-index: 100;
 }
 
@@ -94,13 +95,16 @@ h4 {
 	justify-content: space-between;
 	padding: 15px 2.5rem;
 	align-items: center;
+	height: calc(var(--header-height) + 1.5rem);
+	column-gap: 4rem;
 }
 
 .nav_list {
 	display: flex;
+	flex-direction: row;
 	justify-content: flex-end;
 	align-items: center;
-	gap: 4rem;
+	column-gap: 4rem;
 	color: var(--title-color);
 	font-size: 18px;
 	font-family: var(--title-font);
@@ -115,13 +119,21 @@ h4 {
 	display: inline-block;
 	padding: 10px;
 	border: 2px solid transparent;
-	transition: all .3s ease-in;
+	transition: all .1s ease-in;
 }
 
 .nav_link:hover {
 	border: 2px solid var(--title-color);
+	transition: all .3s ease-in !important;
 }
 
+.nav__close {
+	display: none;
+}
+
+.nav__btns {
+	display: none;
+}
 
 /* ================================== HOME PAGE ================================== */
 
@@ -142,6 +154,7 @@ h4 {
 
 .my_name {
 	flex-basis: 50%;
+	order: 1;
 }
 
 .my_name h1 {
@@ -153,6 +166,7 @@ h4 {
 
 .title {
 	flex-basis: 100%;
+	order: 3;
 }
 
 .title p {
@@ -165,6 +179,7 @@ h4 {
 .intro {
 	flex-basis: 50%;
 	align-items: center;
+	order: 2
 }
 
 .intro p {
@@ -205,8 +220,6 @@ h4 {
 .img_outer {
 	width: 400px;
 	height: 400px;
-
-
 }
 
 .img_outer img {
@@ -482,9 +495,8 @@ h4 {
 
 @media screen and (min-width: 992px) and (max-width: 1920px) {
 	.container {
-		margin-left: 3.5rem;
-		margin-right: 3.5rem;
-		/* max-width: 1280px; */
+		margin-left: .5rem;
+		margin-right: .5rem;
 	}
 
 	.about_img img {
@@ -544,10 +556,11 @@ h4 {
 	} */
 }
 
-@media (width <=740px) {
+@media (width <=989px) {
 	.project {
-		margin-left: 15px;
-		margin-right: 15px;
+		margin-left: 20px;
+		margin-right: 20px;
+		padding: 50px;
 	}
 
 	.project_cards {
@@ -567,6 +580,269 @@ h4 {
 	.project_img {
 		margin: -100px 0 30px 0;
 		width: 100%;
-		max-width: 1000px;
+		max-width: 350px;
+		height: 100%;
+	}
+}
+
+/* ----------Extra Small Devices (Phones, 600px and down)---------- */
+@media only screen and (max-width: 769px) {
+	.nav {
+		height: var(--header-height);
+		padding: 15px;
+	}
+
+	.nav__close {
+		display: block;
+		color: var(--title-color);
+		font-size: 1.25rem;
+		position: absolute;
+		top: 1rem;
+		right: 1.25rem;
+		cursor: pointer;
+	}
+
+	.nav__btns {
+		display: block;
+	}
+
+	.nav__toggle {
+		display: inline-flex;
+		cursor: pointer;
+		font-size: 1.25rem;
+		color: var(--title-color);
+	}
+
+	.nav_list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1.5rem;
+	}
+
+	.nav_link {
+		display: inline-block;
+		padding: 10px;
+		border: 2px solid transparent;
+		transition: all .1s ease-in;
+		color: var(--title-color);
+	}
+
+	.nav_link:hover {
+		color: #1c2541;
+	}
+
+	.nav_menu {
+		position: fixed;
+		background-color: var(--body-color);
+		width: 60%;
+		height: 100vh;
+		top: 0;
+		right: -100%;
+		padding: 4rem 2rem 0 0;
+		box-shadow: -2px 0 4px rgba(0, 0, 0, 0.086);
+		border-radius: 1rem 0 0 1rem;
+		transition: 0.3s;
+		z-index: 100;
+	}
+
+	.show-menu {
+		right: 0;
+	}
+
+	svg {
+		width: 60px;
+		height: 30px;
+	}
+}
+
+@media screen and (max-width: 769px) {
+	.container {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+
+	.full_page {
+		height: auto;
+		/* display: grid; */
+	}
+
+	.home {
+		display: flex;
+	}
+
+	.name {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: repeat(auto-fit, 1fr);
+		grid-row-gap: px;
+		padding: 0 1.5rem;
+		margin-top: 9rem;
+		align-items: start;
+	}
+
+	.my_name {
+		order: 1;
+	}
+
+	.my_name h1 {
+		font-size: 8vh;
+	}
+
+	.title {
+		order: 2;
+
+	}
+
+	.intro p {
+		font-size: 1.5rem;
+	}
+
+	.intro {
+		order: 3;
+	}
+
+	.welcome {
+		font-size: 1.35rem;
+		font-weight: bold;
+		margin-top: px;
+	}
+
+	.title p {
+		padding: 10px 0;
+		font-size: 3vh;
+	}
+
+	.about_section {
+		margin-top: 5rem;
+	}
+
+	.about_desc {
+		padding: 0 1rem;
+		gap: 15px;
+		justify-content: center;
+	}
+
+	.img_outer {
+		width: 150px;
+		height: 150px;
+	}
+
+	.about_title {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	.about_text {
+		padding: 12px;
+		flex-basis: 100%;
+
+	}
+
+	.aboutme {
+		font-size: 15px;
+		line-height: 24px;
+		text-align: justify;
+	}
+
+	.resume_link {
+		padding: 6px 24px;
+		font-size: 14px;
+		text-align: center;
+	}
+
+	.skill_sets h1,
+	.experience h1 {
+		font-size: 1.25rem;
+		text-align: center;
+	}
+
+	.skill_sets,
+	.experience {
+		flex-basis: 100%;
+	}
+
+	.skill_list {
+		padding: 0;
+		gap: .75rem;
+		margin-top: 20px;
+		font-weight: 500;
+	}
+
+	.skill_list li {
+		font-size: 14px;
+		text-align: center;
+		width: 90px;
+	}
+
+	.skill_img img {
+		width: 40px;
+		height: 100%;
+	}
+
+	.experience h1 {
+		margin-left: 0;
+	}
+
+	.outer {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.card {
+		margin: .75rem 0;
+		width: 100%;
+	}
+
+	.info {
+		font-size: 13px;
+		line-height: 16px;
+	}
+
+	.title::before {
+		display: none;
+	}
+
+	.contact {
+		margin-top: 60px;
+		margin-bottom: 120px;
+	}
+
+	.hello {
+		font-size: 60px;
+	}
+
+	.headline {
+		font-size: 30px;
+	}
+
+	.contact_details p {
+		font-size: 13px;
+		padding: 0 10px;
+	}
+
+	.section_heading {
+		margin-top: 0;
+	}
+
+	.project {
+		padding: 25px;
+	}
+
+	.project_about {
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+	.project_link {
+		font-size: 14px;
+		padding: 9px 19px;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 769px) {
+	.container {
+		margin-left: 2.5rem;
+		margin-right: 2.5rem;
 	}
 }
