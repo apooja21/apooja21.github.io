@@ -24,20 +24,23 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        # - name: Checkout
+        #uses: actions/checkout@v4
+      - name: Setup SSH
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SMARTBLOOM_DEV }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SMARTBLOOM_HOST }} > ~/.ssh/known_hosts
+        shell: bash
+
+      - name: Deploy
+        run: |
+          # Setup
+          REMOTE_DIR=/var/www/apooja.dev
+
+          # git pull
+          ssh -i ~/.ssh/id_rsa ${{ secrets.SMARTBLOOM_USER }}@${{ secrets.SMARTBLOOM_HOST }} "cd $REMOTE_DIR && git pull"
+
+        shell: bash
